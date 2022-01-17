@@ -14,7 +14,8 @@ namespace DemiladeShop.Models.Database.Tables
         public string ProductDescription { get; set; }
         public decimal Price { get; set; }
         public Guid VendorId { get; set; }
-        public byte ProductImages { get; set; }
+        //public byte ProductImages { get; set; }
         public Guid CategoryId { get; set; }
+        public ICollection<ProductImgTb> Images { get; set; }
     }
 }

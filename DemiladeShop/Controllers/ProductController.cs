@@ -28,7 +28,7 @@ namespace DemiladeShop.Controllers
                                c.Price,
                                c.CategoryId,
                                c.VendorId,
-                               c.ProductImages
+                               c.Images
                            };
                 return Request.CreateResponse(HttpStatusCode.OK, prod);
             }
@@ -52,7 +52,7 @@ namespace DemiladeShop.Controllers
                                    c.Id,
                                    c.Productname,
                                    c.ProductDescription,
-                                   c.ProductImages,
+                                   c.Images,
                                    c.Price,
                                    c.VendorId,
                                    c.CategoryId
@@ -81,7 +81,7 @@ namespace DemiladeShop.Controllers
                                   c.Id,
                                   c.Price,
                                   c.VendorId,
-                                  c.ProductImages,
+                                  c.Images,
                                   c.CategoryId,
                                   c.ProductDescription
                               };
@@ -107,10 +107,21 @@ namespace DemiladeShop.Controllers
                     Price = product.Price,
                     ProductDescription = product.Productdescription,
                     CategoryId = product.CategoryId,
-                    ProductImages = product.ProductImage,
+                   // ProductImages = product.ProductImage,
                     VendorId = product.VendorId
                 };
                 db.Products.Add(req);
+                var p = new ProductImgTb();
+                foreach (var item in product.ProductImage)
+                {
+                    p = new ProductImgTb
+                    {
+                        ProductId = item.ProductId,
+                        ImageBytes = item.ImageBytes
+                    };
+                }
+                db.ProductImg.Add(p);
+                
                 db.SaveChanges();
                 return Request.CreateResponse(HttpStatusCode.Created);
             }
