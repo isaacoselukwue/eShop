@@ -13,7 +13,7 @@ namespace DemiladeShop.Controllers
     public class ProductController : ApiController
     {
         [HttpGet]
-        [Route("GetProducts")]
+        [Route("GetAllProducts")]
         public HttpResponseMessage GetAllProducts()
         {
             var db = new ShopDbContext();
@@ -39,7 +39,7 @@ namespace DemiladeShop.Controllers
             }
         }
         [HttpGet]
-        [Route("[action]")]
+        [Route("GetByProductId")]
         public HttpResponseMessage GetByProductId(Guid Id)
         {
             var db = new ShopDbContext();
@@ -67,7 +67,7 @@ namespace DemiladeShop.Controllers
         }
 
         [HttpGet]
-        [Route("[action]")]
+        [Route("GetByCategory")]
         public HttpResponseMessage GetByCategory(Guid Id)
         {
             var db = new ShopDbContext();
@@ -95,7 +95,7 @@ namespace DemiladeShop.Controllers
         }
 
         [HttpPost]
-        [Route("[action]")]
+        [Route("CreateProducts")]
         public HttpResponseMessage CreateProducts([FromBody] ProductModel product)
         {
             var db = new ShopDbContext();
@@ -121,7 +121,7 @@ namespace DemiladeShop.Controllers
             }
         }
         [HttpDelete]
-        [Route("[action]")]
+        [Route("DeleteProduct")]
         public HttpResponseMessage DeleteProduct(Guid Id)
         {
             var db = new ShopDbContext();

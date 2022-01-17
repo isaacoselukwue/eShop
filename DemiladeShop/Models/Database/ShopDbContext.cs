@@ -17,6 +17,9 @@ namespace DemiladeShop.Models.Database
         public DbSet<CategoryTb> Categories { get; set; }
         public DbSet<ProductTb> Products { get; set; }
         public DbSet<OrderTb> Orders { get; set; }
+        public DbSet<OrderDetailsTb> OrderDetails { get; set; }
+        public DbSet<ShoppingCartTb> ShoppingCarts { get; set; }
+        public DbSet<UserTb> Users { get; set; }
     }
 
 }

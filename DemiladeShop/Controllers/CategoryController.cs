@@ -13,7 +13,7 @@ namespace DemiladeShop.Controllers
     public class CategoryController : ApiController
     {
         [HttpGet]
-        [Route("[action]")]
+        [Route("GetAllCategories")]
         public HttpResponseMessage GetAllCategories()
         {
             var DbContext = new ShopDbContext();
@@ -28,7 +28,7 @@ namespace DemiladeShop.Controllers
             return Request.CreateResponse(HttpStatusCode.OK,categories);
         }
         [HttpGet]
-        [Route("[action]/{id}")]
+        [Route("GetACategory")]
         public HttpResponseMessage GetACategory(Guid Id)
         {
             var DbContext = new ShopDbContext();
@@ -36,7 +36,7 @@ namespace DemiladeShop.Controllers
             return Request.CreateResponse(HttpStatusCode.OK,resp);
         }
         [HttpPost]
-        [Route("[action]")]
+        [Route("CreateCategory")]
         public HttpResponseMessage CreateCategory([FromBody] CategoryModel category)
         {
             try
@@ -63,7 +63,7 @@ namespace DemiladeShop.Controllers
             }
         }
         [HttpPut]
-        [Route("[Action]")]
+        [Route("UpdateCategory")]
         public HttpResponseMessage UpdateCategory([FromUri] Guid Id, [FromBody] CategoryModel category)
         {
             try
@@ -102,7 +102,7 @@ namespace DemiladeShop.Controllers
             }
         }
         [HttpDelete]
-        [Route("[action]")]
+        [Route("DeleteCategory")]
         public HttpResponseMessage DeleteCategory(Guid Id)
         {
             var db = new ShopDbContext();

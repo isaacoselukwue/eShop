@@ -163,19 +163,26 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Database\Migration\Configuration.cs" />
     <Compile Include="Models\Database\ShopDbContext.cs" />
     <Compile Include="Models\Database\Tables\CategoryTb.cs" />
+    <Compile Include="Models\Database\Tables\OrderDetailsTb.cs" />
     <Compile Include="Models\Database\Tables\OrderTb.cs" />
     <Compile Include="Models\Database\Tables\ProductTb.cs" />
+    <Compile Include="Models\Database\Tables\ShoppingCartTb.cs" />
+    <Compile Include="Models\Database\Tables\UserTb.cs" />
     <Compile Include="Models\Database\Tables\VendorTb.cs" />
     <Compile Include="Models\Dtos\Categories\CategoryModel.cs" />
     <Compile Include="Models\Dtos\GenericResp.cs" />
+    <Compile Include="Models\Dtos\Orders\OrderModel.cs" />
     <Compile Include="Models\Dtos\Products\ProductModel.cs" />
+    <Compile Include="Models\Dtos\ShoppingCart\ShoppingCartModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
